@@ -13,7 +13,8 @@ import color from 'color';
 import { withTheme } from '../../core/theming';
 
 const ANDROID_VERSION_LOLLIPOP = 21;
-const ANDROID_VERSION_PIE = 28;
+const ANDROID_VERSION_MARSHMALLOW = 23;
+// const ANDROID_VERSION_PIE = 28;
 
 type Props = React.ComponentProps<typeof TouchableWithoutFeedback> & {
   borderless?: boolean;
@@ -51,7 +52,8 @@ const TouchableRipple = ({
   // https://github.com/facebook/react-native/issues/6480
   const useForeground =
     Platform.OS === 'android' &&
-    Platform.Version >= ANDROID_VERSION_PIE &&
+    Platform.Version >= ANDROID_VERSION_MARSHMALLOW &&
+    // Platform.Version >= ANDROID_VERSION_PIE &&
     borderless;
 
   if (TouchableRipple.supported) {
